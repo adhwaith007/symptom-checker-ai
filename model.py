@@ -3,7 +3,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import LabelEncoder
 
 class DiseasePredictor:
-    def __init__(self, data_path="C:/Users/bijip/OneDrive/Documents/symptom checker/training_data.csv"):
+def __init__(self, data_path="training_data.csv"):
         self.data_path = data_path
         self.model = None
         self.label_encoder = LabelEncoder()
