@@ -12,11 +12,9 @@ class DiseasePredictor:
     def load_and_train(self):
         df = pd.read_csv(self.data_path)
         df = df.drop(columns=["Unnamed: 133"], errors="ignore")
-
         X = df.drop(columns=["prognosis"])
         y = self.label_encoder.fit_transform(df["prognosis"])
         self.symptom_columns = list(X.columns)
-
         self.model = KNeighborsClassifier(n_neighbors=3)
         self.model.fit(X, y)
 
